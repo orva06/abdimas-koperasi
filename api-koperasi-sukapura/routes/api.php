@@ -10,3 +10,8 @@ Route::get('/test', function (Request $request) {
 
 Route::resource('koperasi', UserController::class);
 Route::get('/list', [UserController::class, "users"]);
+
+use App\Http\Controllers\ItemController;
+
+Route::get('/items', [ItemController::class, 'index'])->name('items.index');
+Route::post('/items', [ItemController::class, 'store'])->name('items.store');
